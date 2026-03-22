@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tab Limiter</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+
+    <!-- Header -->
+    <div class="header">
+      <div class="header-icon">🗂️</div>
+      <div class="header-text">
+        <h1>Tab Limiter</h1>
+        <p class="subtitle" id="subtitle">Stay focused, stay clean</p>
+      </div>
+      <!-- Toggle switch -->
+      <label class="toggle" id="toggle-wrap" title="Enable / Disable">
+        <input type="checkbox" id="toggle-enabled" checked>
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <!-- Status bar -->
+    <div class="status-bar" id="status-bar">
+      <span class="status-label" id="status-label">Open tabs</span>
+      <span class="status-count" id="tab-count">—</span>
+      <span class="status-sep">/</span>
+      <span class="status-limit" id="limit-display">10</span>
+    </div>
+
+    <!-- Progress bar -->
+    <div class="progress-wrap">
+      <div class="progress-bar" id="progress-bar"></div>
+    </div>
+
+    <!-- Limit setter -->
+    <div class="limit-section">
+      <label class="limit-label" id="label-limit">Tab limit</label>
+      <div class="limit-controls">
+        <button class="btn-step" id="btn-minus" aria-label="Decrease">−</button>
+        <input type="number" id="limit-input" value="10" min="1" max="100" aria-label="Tab limit">
+        <button class="btn-step" id="btn-plus" aria-label="Increase">+</button>
+      </div>
+    </div>
+
+    <!-- Blocked notification (hidden by default) -->
+    <div class="blocked-notice" id="blocked-notice" style="display:none">
+      <span>⚠️</span>
+      <span id="blocked-text">Tab limit reached! New tab was closed.</span>
+    </div>
+
+    <!-- Rate Us prompt (shown after 10 uses) -->
+    <div class="rate-us" id="rate-us" style="display:none">
+      <span>⭐</span>
+      <a href="#" id="rate-link" target="_blank" id="rate-link">Enjoying Tab Limiter? Rate us!</a>
+    </div>
+
+    <!-- Donation banner -->
+    <div class="donate-banner" id="donate-banner" style="display:none">
+      <a href="#" id="donate-link" target="_blank">
+        <span>☕</span>
+        <span id="donate-text">Support the developer</span>
+      </a>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <a href="#" id="privacy-link" target="_blank" id="privacy-link">Privacy Policy</a>
+    </div>
+
+  </div>
+  <script type="module" src="popup.js"></script>
+</body>
+</html>
